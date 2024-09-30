@@ -13,8 +13,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.18",
+    "@types/qs": "^6.9.16",
     "ant-design-vue": "^4.2.5",
+    "axios": "^1.7.7",
+    "less": "^4.2.0",
     "pinia": "^2.1.7",
+    "qs": "^6.13.0",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

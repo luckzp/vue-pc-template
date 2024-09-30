@@ -5,17 +5,20 @@ import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
-import { svgSpritemap } from 'vite-plugin-svg-spritemap'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'node:path'
+
 export default defineConfig({
   plugins: [
     vue(),
-    // svg icon
-    svgSpritemap({
-      pattern: 'src/icons/*.svg', // 需要处理的svg路径
-      filename: 'static/spritemap.svg', // 生成的精灵图路径
-      svgo: false,
-      currentColor: false
+
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
+      // 指定symbolId格式
+      symbolId: 'icon-[name]'
     }),
+
     Components({
       resolvers: [
         AntDesignVueResolver({

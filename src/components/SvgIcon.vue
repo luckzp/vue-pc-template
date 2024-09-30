@@ -1,6 +1,6 @@
 <template>
     <svg :class="svgClass">
-        <use :xlink:href="`/static/spritemap.svg#${iconClass}`" />
+        <use :xlink:href="`#icon-${iconClass}`" />
     </svg>
 </template>
 
@@ -15,11 +15,7 @@ const props = defineProps({
     className: {
         type: String,
         default: '',
-    },
-    size: {
-        type: Number,
-        default: 16,
-    },
+    }
 });
 
 const svgClass = computed(() =>
